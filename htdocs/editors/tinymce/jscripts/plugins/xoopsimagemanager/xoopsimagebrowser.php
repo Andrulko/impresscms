@@ -1,4 +1,4 @@
-<?php
+,<?php
 /**
 * Images Manager - Image Browser
 *
@@ -17,13 +17,13 @@ if (!defined('ICMS_ROOT_PATH')) die("ImpressCMS root path not defined");
 
 $icmsTpl = new icms_view_Tpl ( );
 
-$op = (isset($_GET['op'])) ? filter_input(INPUT_GET, 'op') : ((isset($_POST['op'])) ? filter_input(INPUT_POST, 'op') : 'list');
+$op = (isset($_GET['op'])) ? filter_input(INPUT_GET, 'op', FILTER_SANITIZE_STRING) : ((isset($_POST['op'])) ? filter_input(INPUT_POST, 'op', FILTER_SANITIZE_STRING) : 'list');
 $imgcat_id = (isset($_GET['imgcat_id'])) ? (int) ($_GET['imgcat_id']) : ((isset($_POST['imgcat_id'])) ? (int) ($_POST['imgcat_id']) : null);
 $image_id = (isset($_GET['image_id'])) ? (int) ($_GET['image_id']) : ((isset($_POST['image_id'])) ? (int) ($_POST['image_id']) : null);
-$target = (isset($_GET['target'])) ? filter_input(INPUT_GET, 'target') : ((isset($_POST['target'])) ? filter_input(INPUT_POST, 'target') : null);
+$target = (isset($_GET['target'])) ? filter_input(INPUT_GET, 'target', FILTER_SANITIZE_STRING) : ((isset($_POST['target'])) ? filter_input(INPUT_POST, 'target', FILTER_SANITIZE_STRING) : null);
 $limit = (isset($_GET['limit'])) ? (int) ($_GET['limit']) : ((isset($_POST['limit'])) ? (int) ($_POST['limit']) : 15);
 $start = (isset($_GET['start'])) ? (int) ($_GET['start']) : ((isset($_POST['start'])) ? (int) ($_POST['start']) : 0);
-$type = (isset($_GET['type'])) ? filter_input(INPUT_GET, 'type') : ((isset($_POST['type'])) ? filter_input(INPUT_POST, 'type') : 'ibrow');
+$type = (isset($_GET['type'])) ? filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING) : ((isset($_POST['type'])) ? filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING) : 'ibrow');
 
 global $icmsConfig, $icmsUser;
 #Adding language files
